@@ -1,0 +1,15 @@
+<section class="content-header" [@fadeInOnEnter] [@fadeOutOnLeave]>
+  <section class="content">
+    <div class="row" [@slideInUpOnEnter]>
+      <div *ngFor="let restaurant of restaurants" class="col-sm-6 col-xs-12">
+        <meat-restaurant-card [restaurant]="restaurant"></meat-restaurant-card>
+      </div>
+      
+      <div *ngIf="restaurants?.length === 0" class="col-xs-12">
+        <p class="lead text-center">
+          Não foram encontrados itens para a sua busca
+        </p>
+      </div>
+    </div>
+  </section>
+</section>

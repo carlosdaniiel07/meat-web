@@ -6,20 +6,7 @@ body {
   color: inherit;
 }
 
-.place-info-box {
-  color: #555;
-  display: block;
-  min-height: 120px;
-  background: #fff;
-  width: 100%;
-  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
-  border-radius: 2px;
-  margin-bottom: 15px;
-
-  small {
-    font-size: 14px;
-  }
-
+.place-info {
   .progress {
     background: rgba(0, 0, 0, 0.2);
     margin: 5px -10px 5px -10px;
@@ -27,74 +14,80 @@ body {
     border-radius: 0;
 
     .progress-bar {
+      background: #fff;
       border-radius: 0;
     }
   }
-}
 
-.place-info {
-  .progress {
-    .progress-bar {
-      background: #fff;
+  small {
+    font-size: 14px;
+  }
+
+  &-box {
+    color: #555;
+    display: block;
+    min-height: 120px;
+    background: #fff;
+    width: 100%;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    border-radius: 2px;
+    margin-bottom: 15px;
+
+    &-icon {
+      border-top-left-radius: 2px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 2px;
+      display: block;
+      float: left;
+      width: 120px;
+      text-align: center;
+      background: rgba(0, 0, 0, 0.2);
+
+      img {
+        max-width: 100%;
+      }
+    }
+    &-content {
+      display: flex;
+      flex-direction: column;
+      padding: 10px 15px;
+
+      &-icon-row {
+        justify-content: space-between;
+      }
+    }
+    &-detail {
+      display: block;
+      font-size: 14px;
+      margin-bottom: 5px;
+      width: 100%;
+    }
+    &-text {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      float: left;
+    }
+    &-star {
+      display: block;
+      font-size: 18px;
+      font-weight: bold;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 10px;
+      float: right;
+    }
+    &-more {
+      display: block;
     }
   }
-}
-
-.place-info-box-icon {
-  border-top-left-radius: 2px;
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-  border-bottom-left-radius: 2px;
-  display: block;
-  float: left;
-  width: 120px;
-  text-align: center;
-  background: rgba(0, 0, 0, 0.2);
-}
-
-.place-info-box-icon > img {
-  max-width: 100%;
-}
-
-.place-info-box-content {
-  padding: 5px 10px;
-  margin-left: 120px;
-}
-
-.place-info-box-detail {
-  display: block;
-  font-size: 14px;
-  margin-bottom: 5px;
-  width: 100%;
-}
-
-.place-info-box-text {
-  display: block;
-  font-size: 18px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 10px;
-  text-transform: uppercase;
-  width: 80%;
-  float: left
-}
-
-.place-info-box-star {
-  display: block;
-  font-size: 18px;
-  font-weight: bold;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  margin-bottom: 10px;
-  width: 20%;
-  float: right;
-}
-
-.place-info-box-more {
-  display: block;
 }
 
 .progress-description {
@@ -109,7 +102,6 @@ body {
 .box-body dl {
   font-size: 18px;
 }
-
 
 .menu-item-info {
   .progress {
@@ -131,15 +123,15 @@ body {
     small {
       font-size: 14px;
     }
-  
+
     .progress {
       background: rgba(0, 0, 0, 0.2);
       margin: 5px -10px 5px -10px;
       height: 2px;
       border-radius: 0;
-  
+
       .progress-bar {
-        border-radius: 0;    
+        border-radius: 0;
       }
     }
 
@@ -158,13 +150,11 @@ body {
         max-width: 100%;
       }
     }
-    
     &-price {
       font-weight: bold;
       margin-right: 20px;
       font-size: 16px;
     }
-
     &-content {
       padding: 5px 10px;
       margin-left: 120px;
@@ -173,14 +163,12 @@ body {
         cursor: pointer;
       }
     }
-
     &-detail {
       display: block;
       font-size: 14px;
       margin-bottom: 15px;
       width: 100%;
     }
-
     &-text {
       display: block;
       font-size: 18px;
@@ -192,7 +180,6 @@ body {
       text-transform: uppercase;
       width: 80%;
     }
-
     &-more {
       display: block;
     }
@@ -206,7 +193,7 @@ body {
 
 .jumbotron {
   background-color: #fff;
-  text-align:center;
+  text-align: center;
 
   h2 {
     font-size: 40px;
@@ -229,25 +216,25 @@ body {
   opacity: 0;
 }
 
-.review-score{
+.review-score {
   font-size: 30px;
   font-weight: bold;
 }
 
-.detail-footer{
-  padding:0px
+.detail-footer {
+  padding: 0px;
 }
 
-.detail-footer > a{
+.detail-footer > a {
   text-align: center;
   font-size: 16px;
   color: #555;
-  width:50%;
+  width: 50%;
   padding-top: 10px;
   padding-bottom: 10px;
 }
 
-.detail-footer > a:hover{
+.detail-footer > a:hover {
   outline: none;
   text-decoration: none;
 }

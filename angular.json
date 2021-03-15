@@ -34,7 +34,6 @@
               "src/assets"
             ],
             "styles": [
-              "./node_modules/admin-lte/bower_components/font-awesome/css/font-awesome.min.css",
               "./node_modules/admin-lte/bower_components/bootstrap/dist/css/bootstrap.min.css",
               "./node_modules/admin-lte/dist/css/AdminLTE.min.css",
               "./node_modules/admin-lte/dist/css/skins/skin-red.min.css",
