@@ -14,10 +14,10 @@ import { HomeComponent } from './pages/home/home.component'
 import { NotFoundComponent } from './pages/not-found/not-found.component'
 
 // Cards
-import { WelcomeComponent } from './components/cards/welcome/welcome.component'
+import { WelcomeCardComponent } from './components/cards/welcome/welcome-card.component'
 
 @NgModule({
-  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, WelcomeComponent, NotFoundComponent],
+  declarations: [AppComponent, HeaderComponent, FooterComponent, HomeComponent, WelcomeCardComponent, NotFoundComponent],
   imports: [
     BrowserModule,
     AppRoutingModule
