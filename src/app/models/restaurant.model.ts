@@ -1,5 +1,7 @@
-export interface Restaurant {
-  id: string
+import { Base } from './base.model'
+import { Menu } from './menu.model'
+
+export interface Restaurant extends Base {
   name: string
   description: string
   openingHours: string
@@ -7,4 +9,5 @@ export interface Restaurant {
   deliveryDelay: string
   rating: number
   imagePath: string
+  menu: Menu[]
 }
