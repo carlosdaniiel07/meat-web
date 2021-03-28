@@ -4,6 +4,7 @@ import { RouterModule, Routes } from '@angular/router'
 // Pages
 import { HomeComponent } from './pages/home/home.component'
 import { RestaurantsComponent } from './pages/restaurants/restaurants.component'
+import { RestaurantDetailsComponent } from './pages/restaurants/restaurant-details/restaurant-details.component'
 import { NotFoundComponent } from './pages/not-found/not-found.component'
 
 const routes: Routes = [
@@ -14,6 +15,10 @@ const routes: Routes = [
   {
     path: 'restaurants',
     component: RestaurantsComponent
+  },
+  {
+    path: 'restaurants/:id',
+    component: RestaurantDetailsComponent
   },
   {
     path: '**',

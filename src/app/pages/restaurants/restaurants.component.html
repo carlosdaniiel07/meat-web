@@ -1,5 +1,5 @@
 <section class="content-header" [@fadeInOnEnter] [@fadeOutOnLeave]>
-  <section class="content">
+  <div class="content">
     <div class="row" [@slideInUpOnEnter]>
       <div *ngFor="let restaurant of restaurants" class="col-sm-6 col-xs-12">
         <meat-restaurant-card [restaurant]="restaurant"></meat-restaurant-card>
@@ -11,5 +11,5 @@
         </p>
       </div>
     </div>
-  </section>
+  </div>
 </section>

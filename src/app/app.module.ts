@@ -18,6 +18,9 @@ import { RestaurantsComponent } from './pages/restaurants/restaurants.component'
 // Cards
 import { WelcomeCardComponent } from './components/cards/welcome-card/welcome-card.component'
 import { RestaurantCardComponent } from './components/cards/restaurant-card/restaurant-card.component'
+import { ServicesModule } from './services/services.module';
+import { RestaurantDetailsComponent } from './pages/restaurants/restaurant-details/restaurant-details.component';
+import { RestaurantDetailsCardComponent } from './components/cards/restaurant-details-card/restaurant-details-card.component'
 
 @NgModule({
   declarations: [
@@ -28,12 +31,15 @@ import { RestaurantCardComponent } from './components/cards/restaurant-card/rest
     WelcomeCardComponent,
     NotFoundComponent,
     RestaurantsComponent,
-    RestaurantCardComponent
+    RestaurantCardComponent,
+    RestaurantDetailsComponent,
+    RestaurantDetailsCardComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    AppRoutingModule
+    AppRoutingModule,
+    ServicesModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
