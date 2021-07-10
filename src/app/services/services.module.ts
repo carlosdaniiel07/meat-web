@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common'
 import { HttpClientModule } from '@angular/common/http'
 import { RestaurantService } from './restaurant.service'
 import { LoadingService } from './loading.service'
+import { ShoppingCartService } from './shopping-cart.service'
 
 @NgModule({
   declarations: [],
@@ -13,6 +14,7 @@ import { LoadingService } from './loading.service'
   providers: [
     RestaurantService,
     LoadingService,
+    ShoppingCartService,
   ],
 })
 export class ServicesModule { }

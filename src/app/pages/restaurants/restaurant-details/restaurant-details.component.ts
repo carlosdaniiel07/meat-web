@@ -2,9 +2,10 @@ import { Component, OnInit } from '@angular/core'
 import { ActivatedRoute } from '@angular/router'
 import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation } from 'angular-animations'
 import { Observable } from 'rxjs'
-import { Restaurant } from 'src/app/models'
+import { Menu, Restaurant } from 'src/app/models'
 import { LoadingService } from 'src/app/services/loading.service'
 import { RestaurantService } from 'src/app/services/restaurant.service'
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service'
 
 @Component({
   selector: 'meat-restaurant-details',
@@ -21,6 +22,7 @@ export class RestaurantDetailsComponent implements OnInit {
   constructor(
     private readonly route: ActivatedRoute,
     private readonly restaurantService: RestaurantService,
+    private readonly shoppingCartService: ShoppingCartService,
     private readonly loadingService: LoadingService,
   ) { }
 
@@ -31,6 +33,10 @@ export class RestaurantDetailsComponent implements OnInit {
 
   public get loading(): Observable<boolean> {
     return this.loadingService.loading$
+  }
+
+  public addItemToCart(item: Menu): void {
+    this.shoppingCartService.addItem(item)
   }
 
   private loadRestaurant(id: string): void {

@@ -8,7 +8,7 @@
     <span class="menu-item-info-box-detail">{{ menu?.description }}</span>
     <span class="menu-item-info-box-price">{{ menu?.price | currency }}</span>
     
-    <a class="">
+    <a (click)="addItem.emit(menu)">
       <i class="fa fa-plus-circle"></i> Adicionar
     </a>
   </div>

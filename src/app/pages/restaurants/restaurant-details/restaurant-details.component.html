@@ -12,6 +12,7 @@
           <meat-menu-card
             *ngFor="let menu of restaurant?.menu"
             [menu]="menu"
+            (addItem)="addItemToCart($event)"
           ></meat-menu-card>
         </div>
 
