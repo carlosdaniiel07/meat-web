@@ -1,57 +1,63 @@
 <section class="content-header" [@fadeInOnEnter] [@fadeOutOnLeave]>
-  <div class="content">
-    <meat-restaurant-details-card [restaurant]="restaurant"></meat-restaurant-details-card>
+  <meat-loading *ngIf="loading | async; else content"></meat-loading>
 
-    <div class="row">
-      <div class="col-md-9 col-xs-12">
-        <meat-menu-card *ngFor="let menu of restaurant?.menu" [menu]="menu"></meat-menu-card>
-      </div>
+  <ng-template #content>
+    <div class="content">
+      <meat-restaurant-details-card
+        [restaurant]="restaurant"
+      ></meat-restaurant-details-card>
 
-      <div class="col-md-3 col-xs-12">
-        <div class="box box-solid">
-          <div class="box-header">
-            <i class="fa fa-shopping-cart"></i>
-
-            <h3 class="box-title">Carrinho</h3>
-          </div>
-
-          <div class="box-body">
-            <div class="table-responsive">
-              <table class="table">
-                <tbody>
-                  <tr>
-                    <th style="width:60%">Cerveja:</th>
-
-                    <td class="text-right">R$ 6,00</td>
-
-                  </tr>
-                  <tr>
-                    <th>Pork Burger</th>
-
-                    <td class="text-right">R$ 22,00</td>
-                  </tr>
-                  <tr>
-                    <th>Frete:</th>
-
-                    <td class="text-right">R$ 8,00</td>
-                  </tr>
-                  <tr>
-                    <th>Total:</th>
-
-                    <td class="text-right">R$ 80,90</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-          <div class="box-footer">
-            <div class="pull-right">
-              <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Limpar</button>
-              <a href="order.html" class="btn btn-success"><i class="fa fa-credit-card"></i> Fechar Pedido</a>
-            </div>
-          </div>
+      <div class="row">
+        <div class="col-md-9 col-xs-12">
+          <meat-menu-card *ngFor="let menu of restaurant?.menu" [menu]="menu"></meat-menu-card>
         </div>
+  
+        <!-- <div class="col-md-3 col-xs-12">
+          <div class="box box-solid">
+            <div class="box-header">
+              <i class="fa fa-shopping-cart"></i>
+  
+              <h3 class="box-title">Carrinho</h3>
+            </div>
+  
+            <div class="box-body">
+              <div class="table-responsive">
+                <table class="table">
+                  <tbody>
+                    <tr>
+                      <th style="width:60%">Cerveja:</th>
+  
+                      <td class="text-right">R$ 6,00</td>
+  
+                    </tr>
+                    <tr>
+                      <th>Pork Burger</th>
+  
+                      <td class="text-right">R$ 22,00</td>
+                    </tr>
+                    <tr>
+                      <th>Frete:</th>
+  
+                      <td class="text-right">R$ 8,00</td>
+                    </tr>
+                    <tr>
+                      <th>Total:</th>
+  
+                      <td class="text-right">R$ 80,90</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="box-footer">
+              <div class="pull-right">
+                <button type="button" class="btn btn-danger"><i class="fa fa-trash"></i> Limpar</button>
+                <a href="order.html" class="btn btn-success"><i class="fa fa-credit-card"></i> Fechar Pedido</a>
+              </div>
+            </div>
+          </div>
+        </div> -->
       </div>
     </div>
-  </div>
+  </ng-template>
 </section>
