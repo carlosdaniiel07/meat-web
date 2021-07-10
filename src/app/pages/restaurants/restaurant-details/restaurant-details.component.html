@@ -9,9 +9,12 @@
 
       <div class="row">
         <div class="col-md-9 col-xs-12">
-          <meat-menu-card *ngFor="let menu of restaurant?.menu" [menu]="menu"></meat-menu-card>
+          <meat-menu-card
+            *ngFor="let menu of restaurant?.menu"
+            [menu]="menu"
+          ></meat-menu-card>
         </div>
-  
+
         <!-- <div class="col-md-3 col-xs-12">
           <div class="box box-solid">
             <div class="box-header">
