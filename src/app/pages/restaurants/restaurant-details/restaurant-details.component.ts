@@ -26,7 +26,7 @@ export class RestaurantDetailsComponent implements OnInit {
     this.loadRestaurant(restaurantId)
   }
 
-  private async loadRestaurant(id: string): Promise<void> {
-    this.restaurant = await this.restaurantService.findById(id)
+  private loadRestaurant(id: string): void {
+    this.restaurantService.findById(id).subscribe((data) => (this.restaurant = data))
   }
 }

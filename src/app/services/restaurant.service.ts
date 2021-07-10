@@ -8,14 +8,13 @@ import { Restaurant } from '../models'
   providedIn: 'root',
 })
 export class RestaurantService {
-
   constructor(private readonly http: HttpClient) {}
 
   public findAll(): Observable<Restaurant[]> {
     return this.http.get<Restaurant[]>(`${environment.apiUrl}/restaurants`)
   }
 
-  public findById(id: string): Promise<Restaurant> {
-    return this.http.get<Restaurant>(`${environment.apiUrl}/restaurants/${id}`).toPromise()
+  public findById(id: string): Observable<Restaurant> {
+    return this.http.get<Restaurant>(`${environment.apiUrl}/restaurants/${id}`)
   }
 }

@@ -26,7 +26,7 @@ import { ServicesModule } from './services/services.module'
 import { RestaurantDetailsCardComponent } from './components/cards/restaurant-details-card/restaurant-details-card.component'
 import { MenuCardComponent } from './components/cards/menu-card/menu-card.component'
 
-import { LoadingMiddleware } from './middlewares/loading.middleware';
+import { LoadingMiddleware } from './middlewares/loading.middleware'
 import { LoadingComponent } from './components/core/loading/loading.component'
 
 registerLocaleData(ptBr)
