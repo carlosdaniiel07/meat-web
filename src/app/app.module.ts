@@ -2,6 +2,7 @@ import { NgModule, LOCALE_ID, DEFAULT_CURRENCY_CODE } from '@angular/core'
 import { BrowserModule } from '@angular/platform-browser'
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import { registerLocaleData } from '@angular/common'
+import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import ptBr from '@angular/common/locales/pt'
 
 import { AppRoutingModule } from './app-routing.module'
@@ -25,6 +26,9 @@ import { ServicesModule } from './services/services.module'
 import { RestaurantDetailsCardComponent } from './components/cards/restaurant-details-card/restaurant-details-card.component'
 import { MenuCardComponent } from './components/cards/menu-card/menu-card.component'
 
+import { LoadingMiddleware } from './middlewares/loading.middleware';
+import { LoadingComponent } from './components/core/loading/loading.component'
+
 registerLocaleData(ptBr)
 
 @NgModule({
@@ -39,7 +43,8 @@ registerLocaleData(ptBr)
     RestaurantCardComponent,
     RestaurantDetailsComponent,
     RestaurantDetailsCardComponent,
-    MenuCardComponent
+    MenuCardComponent,
+    LoadingComponent,
   ],
   imports: [
     BrowserModule,
@@ -50,7 +55,8 @@ registerLocaleData(ptBr)
   providers: [
     { provide: LOCALE_ID, useValue: 'pt' },
     { provide: DEFAULT_CURRENCY_CODE, useValue: 'R$' },
+    { provide: HTTP_INTERCEPTORS, useClass: LoadingMiddleware, multi: true },
   ],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

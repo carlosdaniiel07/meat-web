@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core'
-import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation, slideInUpOnEnterAnimation } from 'angular-animations'
+import { fadeInOnEnterAnimation, fadeOutOnLeaveAnimation } from 'angular-animations'
+import { Observable } from 'rxjs'
 import { Restaurant } from 'src/app/models'
+import { LoadingService } from 'src/app/services/loading.service'
 import { RestaurantService } from 'src/app/services/restaurant.service'
 
 @Component({
@@ -9,19 +11,25 @@ import { RestaurantService } from 'src/app/services/restaurant.service'
   animations: [
     fadeInOnEnterAnimation(),
     fadeOutOnLeaveAnimation(),
-    slideInUpOnEnterAnimation({ duration: 800 }),
   ]
 })
 export class RestaurantsComponent implements OnInit {
   restaurants: Restaurant[] = []
 
-  constructor(private readonly restaurantService: RestaurantService) { }
+  constructor(
+    private readonly restaurantService: RestaurantService,
+    private readonly loadingService: LoadingService
+  ) { }
 
   ngOnInit(): void {
     this.loadRestaurants()
   }
 
-  private async loadRestaurants(): Promise<void> {
-    this.restaurants = await this.restaurantService.findAll()
+  public get loading(): Observable<boolean> {
+    return this.loadingService.loading$
+  }
+
+  private loadRestaurants(): void {
+    this.restaurantService.findAll().subscribe((data) => (this.restaurants = data))
   }
 }
