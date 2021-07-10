@@ -28,6 +28,7 @@ import { MenuCardComponent } from './components/cards/menu-card/menu-card.compon
 
 import { LoadingMiddleware } from './middlewares/loading.middleware'
 import { LoadingComponent } from './components/core/loading/loading.component'
+import { ShoppingCartComponent } from './components/cards/shopping-cart/shopping-cart.component'
 
 registerLocaleData(ptBr)
 
@@ -45,6 +46,7 @@ registerLocaleData(ptBr)
     RestaurantDetailsCardComponent,
     MenuCardComponent,
     LoadingComponent,
+    ShoppingCartComponent,
   ],
   imports: [
     BrowserModule,
