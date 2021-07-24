@@ -32,4 +32,8 @@ export class OrderItemsComponent implements OnInit {
   public getItemTotal(item: ShoppingCart): number {
     return this.shoppingCartService.getItemTotal(item)
   }
+
+  public get hasItems(): boolean {
+    return this.items.length > 0
+  }
 }

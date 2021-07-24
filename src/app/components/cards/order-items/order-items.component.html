@@ -1,8 +1,16 @@
 <div class="row">
   <div class="col-xs-12">
-    <p class="lead">Itens do Pedido:</p>
+    <p class="lead">Itens do Pedido</p>
   </div>
-  <div class="col-xs-12 table-responsive">
+
+  <div class="col-xs-12" *ngIf="!hasItems" style="margin-bottom: 3rem;">
+    <p class="text-center">
+      Não há itens no seu carrinho. Que tal começar por
+      <a [routerLink]="['/restaurants']">aqui</a>?
+    </p>
+  </div>
+
+  <div *ngIf="hasItems" class="col-xs-12 table-responsive">
     <table class="table table-striped">
       <thead>
         <tr>
