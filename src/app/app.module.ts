@@ -37,6 +37,8 @@ import { OrderFormComponent } from './components/forms/order-form/order-form.com
 import { OrderItemsComponent } from './components/cards/order-items/order-items.component'
 import { OrderPaymentMethodsComponent } from './components/cards/order-payment-methods/order-payment-methods.component'
 import { OrderShippingInfoComponent } from './components/cards/order-shipping-info/order-shipping-info.component'
+import { InputComponent } from './components/core/input/input.component'
+import { ReactiveFormsModule } from '@angular/forms'
 
 registerLocaleData(ptBr)
 
@@ -63,10 +65,12 @@ registerLocaleData(ptBr)
     OrderItemsComponent,
     OrderPaymentMethodsComponent,
     OrderShippingInfoComponent,
+    InputComponent,
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    ReactiveFormsModule,
     AppRoutingModule,
     ServicesModule,
   ],

@@ -1,0 +1,14 @@
+<div
+  class="form-group"
+  [class.has-success]="hasSuccess"
+  [class.has-error]="hasError"
+>
+  <ng-content></ng-content>
+
+  <span *ngIf="showErrorMessage && hasError" class="help-block"
+    ><i class="fa fa-remove"></i> {{ errorMessage }}</span
+  >
+  <span *ngIf="showErrorMessage && hasSuccess" class="help-block"
+    ><i class="fa fa-check"></i
+  > Ok</span>
+</div>
