@@ -14,32 +14,24 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr *ngFor="let item of items">
           <td class="text-center">
-            <a class="btn btn-sm"><i class="fa fa-minus"></i></a>
-            1
-            <a class="btn btn-sm"><i class="fa fa-plus"></i></a>
+            <a class="btn btn-sm" (click)="decreaseQty(item)"
+              ><i class="fa fa-minus"></i
+            ></a>
+            {{ item.quantity }}
+            <a class="btn btn-sm" (click)="increaseQty(item)"
+              ><i class="fa fa-plus"></i
+            ></a>
           </td>
-          <td>Cup Cake</td>
+          <td>{{ item.product?.name }}</td>
 
-          <td>Recheado com doce de leite</td>
-          <td class="text-right">R$ 10,00</td>
+          <td>{{ item.product?.description }}</td>
+          <td class="text-right">{{ item.total | currency: "BRL" }}</td>
           <td class="text-right">
-            <a class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
-          </td>
-        </tr>
-        <tr>
-          <td class="text-center">
-            <a class="btn btn-sm"><i class="fa fa-minus"></i></a>
-            1
-            <a class="btn btn-sm"><i class="fa fa-plus"></i></a>
-          </td>
-          <td>Croissant</td>
-
-          <td>Recheado com presunto e queijo</td>
-          <td class="text-right">R$ 10,00</td>
-          <td class="text-right">
-            <a class="btn btn-sm danger"><i class="fa fa-remove"></i></a>
+            <a class="btn btn-sm danger" (click)="remove(item)"
+              ><i class="fa fa-remove"></i
+            ></a>
           </td>
         </tr>
       </tbody>

@@ -32,8 +32,8 @@ export class ShoppingCartComponent implements OnInit {
     return this.items.length === 0;
   }
 
-  public remove(index: number): void {
-    this.shoppingCartService.removeItem(index);
+  public remove(item: ShoppingCart): void {
+    this.shoppingCartService.removeItem(item.product);
   }
 
   public clear(): void {

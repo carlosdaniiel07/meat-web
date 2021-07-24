@@ -19,7 +19,7 @@ export class ShoppingCartService {
 
   public get productsValue(): number {
     return this._cart
-      .map((item) => item.total)
+      .map((item) => (item.product?.price ?? 0) * item.quantity)
       .reduce((total, current) => total + current, 0)
   }
 
@@ -44,19 +44,43 @@ export class ShoppingCartService {
       this.cart[itemIndex] = {
         ...cartItem,
         quantity: newQuantity,
-        total: cartItem.product.price * newQuantity,
       }
     } else {
       this._cart.push({
         product,
         quantity: 1,
-        total: product.price * 1,
       })
     }
   }
 
-  public removeItem(index: number): void {
-    this._cart.splice(index, 1)
+  public decreaseQty(product: Menu): void {
+    const { id: productId } = product
+    const index = this._cart.findIndex((x) => x.product.id === productId)
+    const isOnCart = index !== -1
+
+    if (!isOnCart) {
+      return
+    }
+
+    const cartItem = this._cart[index]
+    const newQuantity = cartItem.quantity - 1
+
+    if (newQuantity === 0) {
+      this.removeItem(product)
+    } else {
+      this._cart[index] = {
+        ...cartItem,
+        quantity: newQuantity,
+      }
+    }
+  }
+
+  public removeItem(product: Menu): void {
+    const index = this._cart.findIndex(x => x.product.id === product.id)
+
+    if (index !== -1) {
+      this._cart.splice(index, 1)
+    }
   }
 
   public clear(): void {
