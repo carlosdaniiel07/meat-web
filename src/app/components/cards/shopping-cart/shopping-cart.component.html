@@ -46,7 +46,12 @@
       >
         <i class="fa fa-trash"></i> Limpar
       </button>
-      <button type="button" class="btn btn-success" [disabled]="isEmpty">
+      <button
+        type="button"
+        class="btn btn-success"
+        [disabled]="isEmpty"
+        (click)="submit()"
+      >
         <i class="fa fa-credit-card"></i> Fechar Pedido
       </button>
     </div>

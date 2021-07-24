@@ -7,6 +7,7 @@ import { RestaurantDetailsComponent } from './pages/restaurants/restaurant-detai
 import { NotFoundComponent } from './pages/not-found/not-found.component'
 import { RestaurantMenuCardComponent } from './components/cards/restaurant-menu-card/restaurant-menu-card.component'
 import { RestaurantReviewsCardComponent } from './components/cards/restaurant-reviews-card/restaurant-reviews-card.component'
+import { OrderComponent } from './pages/order/order.component'
 
 const routes: Routes = [
   {
@@ -35,6 +36,10 @@ const routes: Routes = [
         component: RestaurantReviewsCardComponent,
       },
     ],
+  },
+  {
+    path: 'order',
+    component: OrderComponent
   },
   {
     path: '**',
