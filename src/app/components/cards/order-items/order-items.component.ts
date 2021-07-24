@@ -28,4 +28,8 @@ export class OrderItemsComponent implements OnInit {
   public remove(item: ShoppingCart): void {
     this.shoppingCartService.removeItem(item.product)
   }
+
+  public getItemTotal(item: ShoppingCart): number {
+    return this.shoppingCartService.getItemTotal(item)
+  }
 }

@@ -1,8 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core'
 import {
   fadeInOnEnterAnimation,
   fadeOutOnLeaveAnimation,
-} from 'angular-animations';
+} from 'angular-animations'
 
 @Component({
   selector: 'meat-order',

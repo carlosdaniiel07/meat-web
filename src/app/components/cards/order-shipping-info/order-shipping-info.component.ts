@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
+import { Component, OnInit } from '@angular/core'
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service'
 
 @Component({
   selector: 'meat-order-shipping-info',

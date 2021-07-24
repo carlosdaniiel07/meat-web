@@ -19,7 +19,7 @@ export class ShoppingCartService {
 
   public get productsValue(): number {
     return this._cart
-      .map((item) => (item.product?.price ?? 0) * item.quantity)
+      .map(this.getItemTotal)
       .reduce((total, current) => total + current, 0)
   }
 
@@ -85,5 +85,9 @@ export class ShoppingCartService {
 
   public clear(): void {
     this._cart = []
+  }
+
+  public getItemTotal(shoppingCart: ShoppingCart): number {
+    return (shoppingCart?.product?.price ?? 0) * shoppingCart.quantity
   }
 }

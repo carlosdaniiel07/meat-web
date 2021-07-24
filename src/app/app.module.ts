@@ -29,13 +29,13 @@ import { ShoppingCartComponent } from './components/cards/shopping-cart/shopping
 import { RestaurantMenuCardComponent } from './components/cards/restaurant-menu-card/restaurant-menu-card.component'
 
 import { LoadingMiddleware } from './middlewares/loading.middleware'
-import { LoadingComponent } from './components/core/loading/loading.component';
-import { RestaurantReviewsCardComponent } from './components/cards/restaurant-reviews-card/restaurant-reviews-card.component';
-import { ReviewCardComponent } from './components/cards/review-card/review-card.component';
-import { OrderComponent } from './pages/order/order.component';
-import { OrderFormComponent } from './components/forms/order-form/order-form.component';
-import { OrderItemsComponent } from './components/cards/order-items/order-items.component';
-import { OrderPaymentMethodsComponent } from './components/cards/order-payment-methods/order-payment-methods.component';
+import { LoadingComponent } from './components/core/loading/loading.component'
+import { RestaurantReviewsCardComponent } from './components/cards/restaurant-reviews-card/restaurant-reviews-card.component'
+import { ReviewCardComponent } from './components/cards/review-card/review-card.component'
+import { OrderComponent } from './pages/order/order.component'
+import { OrderFormComponent } from './components/forms/order-form/order-form.component'
+import { OrderItemsComponent } from './components/cards/order-items/order-items.component'
+import { OrderPaymentMethodsComponent } from './components/cards/order-payment-methods/order-payment-methods.component'
 import { OrderShippingInfoComponent } from './components/cards/order-shipping-info/order-shipping-info.component'
 
 registerLocaleData(ptBr)

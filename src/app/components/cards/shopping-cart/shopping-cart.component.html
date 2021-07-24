@@ -15,7 +15,7 @@
               ({{ item.quantity }}x)
               {{ item.product?.name }}
             </th>
-            <td class="text-right">{{ item.total | currency }}</td>
+            <td class="text-right">{{ getItemTotal(item) | currency }}</td>
             <td class="text-right">
               <a class="btn btn-sm danger" (click)="remove(item)">
                 <i class="fa fa-remove"></i>

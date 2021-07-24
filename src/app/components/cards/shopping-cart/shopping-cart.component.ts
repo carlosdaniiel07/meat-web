@@ -1,7 +1,7 @@
-import { Component, OnInit } from '@angular/core';
-import { Router } from '@angular/router';
-import { ShoppingCart } from 'src/app/models/shopping-cart.model';
-import { ShoppingCartService } from 'src/app/services/shopping-cart.service';
+import { Component, OnInit } from '@angular/core'
+import { Router } from '@angular/router'
+import { ShoppingCart } from 'src/app/models/shopping-cart.model'
+import { ShoppingCartService } from 'src/app/services/shopping-cart.service'
 
 @Component({
   selector: 'meat-shopping-cart',
@@ -17,30 +17,34 @@ export class ShoppingCartComponent implements OnInit {
   ngOnInit(): void {}
 
   public get items(): ShoppingCart[] {
-    return this.shoppingCartService.cart;
+    return this.shoppingCartService.cart
   }
 
   public get totalValue(): number {
-    return this.shoppingCartService.totalValue;
+    return this.shoppingCartService.totalValue
   }
 
   public get deliveryFee(): number {
-    return this.shoppingCartService.deliveryFee;
+    return this.shoppingCartService.deliveryFee
   }
 
   public get isEmpty(): boolean {
-    return this.items.length === 0;
+    return this.items.length === 0
   }
 
   public remove(item: ShoppingCart): void {
-    this.shoppingCartService.removeItem(item.product);
+    this.shoppingCartService.removeItem(item.product)
   }
 
   public clear(): void {
-    this.shoppingCartService.clear();
+    this.shoppingCartService.clear()
   }
 
   public submit(): void {
-    this.router.navigate(['order']);
+    this.router.navigate(['order'])
+  }
+
+  public getItemTotal(item: ShoppingCart): number {
+    return this.shoppingCartService.getItemTotal(item)
   }
 }
