@@ -1,0 +1,12 @@
+<div class="row">
+  <div *ngIf="loading | async; else content"></div>
+
+  <ng-template #content>
+    <div [@fadeInOnEnter]>
+      <meat-review-card
+        *ngFor="let review of reviews"
+        [review]="review"
+      ></meat-review-card>
+    </div>
+  </ng-template>
+</div>

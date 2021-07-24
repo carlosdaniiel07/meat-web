@@ -25,10 +25,13 @@ import { RestaurantCardComponent } from './components/cards/restaurant-card/rest
 import { ServicesModule } from './services/services.module'
 import { RestaurantDetailsCardComponent } from './components/cards/restaurant-details-card/restaurant-details-card.component'
 import { MenuCardComponent } from './components/cards/menu-card/menu-card.component'
+import { ShoppingCartComponent } from './components/cards/shopping-cart/shopping-cart.component'
+import { RestaurantMenuCardComponent } from './components/cards/restaurant-menu-card/restaurant-menu-card.component'
 
 import { LoadingMiddleware } from './middlewares/loading.middleware'
-import { LoadingComponent } from './components/core/loading/loading.component'
-import { ShoppingCartComponent } from './components/cards/shopping-cart/shopping-cart.component'
+import { LoadingComponent } from './components/core/loading/loading.component';
+import { RestaurantReviewsCardComponent } from './components/cards/restaurant-reviews-card/restaurant-reviews-card.component';
+import { ReviewCardComponent } from './components/cards/review-card/review-card.component'
 
 registerLocaleData(ptBr)
 
@@ -47,6 +50,9 @@ registerLocaleData(ptBr)
     MenuCardComponent,
     LoadingComponent,
     ShoppingCartComponent,
+    RestaurantMenuCardComponent,
+    RestaurantReviewsCardComponent,
+    ReviewCardComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,17 @@
+<div class="row">
+  <div *ngIf="loading | async; else content"></div>
+
+  <ng-template #content>
+    <div class="col-md-9 col-xs-12" [@fadeInOnEnter]>
+      <meat-menu-card
+        *ngFor="let menu of menus"
+        [menu]="menu"
+        (addItem)="addItemToCart($event)"
+      ></meat-menu-card>
+    </div>
+
+    <div class="col-md-3 col-xs-12" [@fadeInOnEnter]>
+      <meat-shopping-cart></meat-shopping-cart>
+    </div>
+  </ng-template>
+</div>

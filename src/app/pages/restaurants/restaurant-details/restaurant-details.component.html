@@ -1,5 +1,5 @@
 <section class="content-header" [@fadeInOnEnter] [@fadeOutOnLeave]>
-  <meat-loading *ngIf="loading | async; else content"></meat-loading>
+  <meat-loading *ngIf="loading; else content"></meat-loading>
 
   <ng-template #content>
     <div class="content">
@@ -7,19 +7,7 @@
         [restaurant]="restaurant"
       ></meat-restaurant-details-card>
 
-      <div class="row">
-        <div class="col-md-9 col-xs-12">
-          <meat-menu-card
-            *ngFor="let menu of restaurant?.menu"
-            [menu]="menu"
-            (addItem)="addItemToCart($event)"
-          ></meat-menu-card>
-        </div>
-
-        <div class="col-md-3 col-xs-12">
-          <meat-shopping-cart></meat-shopping-cart>
-        </div>
-      </div>
+      <router-outlet></router-outlet>
     </div>
   </ng-template>
 </section>
