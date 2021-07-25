@@ -37,20 +37,47 @@
         </meat-input>
       </div>
     </div>
+
+    <meat-order-items></meat-order-items>
+
+    <div class="row">
+      <meat-order-payment-methods>
+        <div class="radio">
+          <label>
+            <input
+              type="radio"
+              name="paymentMethod"
+              value="CREDIT_CARD"
+              formControlName="paymentMethod"
+            />
+            Cartão de crédito
+          </label>
+        </div>
+        <div class="radio">
+          <label>
+            <input
+              type="radio"
+              name="paymentMethod"
+              value="CASH"
+              formControlName="paymentMethod"
+            />
+            Dinheiro
+          </label>
+        </div>
+      </meat-order-payment-methods>
+
+      <meat-order-shipping-info></meat-order-shipping-info>
+    </div>
   </form>
-
-  <meat-order-items></meat-order-items>
-
-  <div class="row">
-    <meat-order-payment-methods></meat-order-payment-methods>
-    <meat-order-shipping-info></meat-order-shipping-info>
-  </div>
 
   <div class="row">
     <div class="col-xs-12">
-      <a href="order-summary.html" class="btn btn-success pull-right"
-        ><i class="fa fa-credit-card"></i> Concluir Pedido
-      </a>
+      <button
+        class="btn btn-success pull-right"
+        [disabled]="!isFormValid || isCartEmpty"
+      >
+        <i class="fa fa-credit-card"></i> Concluir Pedido
+      </button>
     </div>
   </div>
 </div>
