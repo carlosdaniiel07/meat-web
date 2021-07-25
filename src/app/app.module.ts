@@ -5,6 +5,8 @@ import { registerLocaleData } from '@angular/common'
 import { HTTP_INTERCEPTORS } from '@angular/common/http'
 import ptBr from '@angular/common/locales/pt'
 
+import { ToastrModule } from 'ngx-toastr'
+
 import { AppRoutingModule } from './app-routing.module'
 
 import { AppComponent } from './app.component'
@@ -71,6 +73,7 @@ registerLocaleData(ptBr)
     BrowserModule,
     BrowserAnimationsModule,
     ReactiveFormsModule,
+    ToastrModule.forRoot(),
     AppRoutingModule,
     ServicesModule,
   ],
